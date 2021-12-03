@@ -10,7 +10,6 @@ function parseInstructions(input) {
         distance: Number.parseInt(distance)
       }
     })
-    console.log(instructions);
     return instructions;
   }
 
@@ -44,21 +43,18 @@ function calculatePosition(input){
             subPositionP2.depth += (subPositionP2.aim * element.distance);
             break;
 
-        // if up decrease depth by X and aim by X
-        case "up":
+         // if up decrease aim by X
+         case "up":
             subPositionP2.aim -= element.distance;
-            console.log(subPositionP2.depth);
             break;
 
-        // if down increase depth by X and increase aim by X
-        case "down":
+         // if down increase aim by X
+         case "down":
             subPositionP2.aim += element.distance;
-            console.log(subPositionP2.depth);
             break;
 
     }});
 
-console.log(subPositionP2);
 // calculate final position by multiplying horizontal position and depth
 let finalPos = subPositionP2.horizontalPos * subPositionP2.depth;
 return(finalPos);
